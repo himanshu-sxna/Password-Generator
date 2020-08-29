@@ -1,0 +1,63 @@
+
+/** styling for all headings in Headline Holder **/
+
+#heading-1 {
+    text-transform: uppercase;
+    color: red;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+#heading-2 {
+    font-size: 4em;
+}
+
+#heading-3{
+    font-size: 1.5em;
+}
+
+#password-box {
+    letter-spacing: 2px;
+}
+
+#copy-btn {
+    display: none;
+}
+
+/** Customisation container div styling **/
+
+#customisation-box {
+    border: dashed red 1.75px;
+}
+
+#customisation-box-heading-1 {
+    font-size: 1.75em;
+}
+
+/** **/
+
+#password-slider-box label {
+    font-size: 0.75em;
+}
+
+#password-slider-box p {
+    font-size: 0.75em;
+}
+
+#password-slider-box {
+    display: none;
+}
+
+#customisation-box-heading-2 {
+    font-size: 1.25em;
+}
+
+#customisation-box-2 label {
+    font-size: 0.9em;
+}
+
+#customisation-box-submit-error {
+    color: red;
+    font-size: 0.75em;
+    display: none;
+}
