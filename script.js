@@ -1,6 +1,7 @@
-var docReady = document.readyState;
 
-/* The below function will shuffle the generated passwrod array based on the Fisher-Yates shuffle algorithm. This will be used later in the generatePassword fucntion below */
+/* The below function will shuffle the generated passwrod array based on the Fisher-Yates shuffle algorithm. This will be used later in the generatePassword function below
+code source: https://www.tutorialspoint.com/what-is-fisher-yates-shuffle-in-javascript
+*/
 
 function shuffle(array) {
     var m = array.length, temp, i;
@@ -16,7 +17,7 @@ function shuffle(array) {
       array[m] = array[i];
       array[i] = temp;
     }
-  
+
     return array;
   }
 
@@ -91,6 +92,7 @@ function checkboxRequired () {
     }
 }
 
+// The below function displays the copy button when the passwordf is generated //
 function displayCopy() {
 
     var getCopybtn = document.getElementById("copy-btn");
@@ -102,6 +104,25 @@ function displayCopy() {
     else {
         getCopybtn.style.display = "none";
     }
+}
+
+// Th ebelow function will copy the password when the copy button is clicked //
+function copyPassword () {
+
+    // Get the text field //
+    var copyText = document.getElementById("password-box");
+
+    //create a selection range
+    var CopyRange = document.createRange();
+
+    //choose the element we want to select the text of
+    CopyRange.selectNode(copyText);
+
+    //select the text inside the range
+    window.getSelection().addRange(CopyRange);
+
+    //copy the text to the clipboard
+    document.execCommand("copy");
 }
 
 /* The below function uses a simple algorithm to generate the password based on the selections in password customisation box  */
@@ -152,7 +173,7 @@ function generatePassword () {
     var checkSymbols = document.getElementById("checkbox-symbols").checked;
 
 
-    /* The below loops check for which checkboxes have been and if selected, push the required number of items into the password array  */
+    /* The below loops check for which checkboxes have been checked and if selected, push the required number of items into the password array  */
     if (checkLowercase) {
 
         for (let index = 0; index < multiple; index++) {
@@ -181,7 +202,7 @@ function generatePassword () {
         }
     }
 
-    /* The below code will add additional items to the password array if the length of the array after running the above code is less than the length selected by the user, This may happen because the multiple is set to be an integer rounded off  */
+    /* The below code will add additional items to the password array if the length of the array after running the above code is less than the length selected by the user, this may happen because the multiple is set to be an integer rounded off  */
 
 
     if (alphaPassword.length < passLength){
@@ -222,28 +243,31 @@ function generatePassword () {
         alphaPassword.length = passLength;
     }
 
+    // below fucntion shuffles the password as per Fisher Yates algorithm //
     shuffle(alphaPassword);
 
+    /* below code will display the password in the password box, will also remove the commas from the array */
     var getPasswordDiv = document.getElementById("password-box").innerHTML = alphaPassword.join('');
 
+
+    // below function will display the copy button //
     displayCopy();
 
-
-console.log("password length should be " + passLength);
-
-console.log("number of boxes selected are " + checkLength);
-
-console.log("multiple is " + multiple);
-
-console.log(alphaPassword);
-
-console.log("The array length is " + alphaPassword.length);
-
 }
 
-function displayPassword () {
+    /* below console.log statetements help in debugging above functions ----
 
-    
+    console.log("password length should be " + passLength);
 
-    
-}
+    console.log("number of boxes selected are " + checkLength);
+
+    console.log("multiple is " + multiple);
+
+    console.log(alphaPassword);
+
+    console.log("The array length is " + alphaPassword.length);
+    */
+
+    /*****************************************************/
+            /********** End of Script **********/
+
