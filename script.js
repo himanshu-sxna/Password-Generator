@@ -106,23 +106,15 @@ function displayCopy() {
     }
 }
 
-// Th ebelow function will copy the password when the copy button is clicked //
+// The below function will copy the password when the copy button is clicked //
 function copyPassword () {
 
-    // Get the text field //
-    var copyText = document.getElementById("password-box");
+    // Get the pass bowrd box div and its text field //
+    var copyPass = document.getElementById("password-box").textContent;
 
-    //create a selection range
-    var CopyRange = document.createRange();
+    // copy text to clipboard//
+    var promise = navigator.clipboard.writeText(copyPass);
 
-    //choose the element we want to select the text of
-    CopyRange.selectNode(copyText);
-
-    //select the text inside the range
-    window.getSelection().addRange(CopyRange);
-
-    //copy the text to the clipboard
-    document.execCommand("copy");
 }
 
 /* The below function uses a simple algorithm to generate the password based on the selections in password customisation box  */
