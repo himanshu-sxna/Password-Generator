@@ -29,4 +29,6 @@ The *Copy* button is only displayed after the password has been generated.
 
 ![Image of Password Copy](/images/PasswordCopy.JPG)
 
+## App Link
+
 The password generater can be accessed [here.](https://himanshu-sxna.github.io/Password-Generator/)
