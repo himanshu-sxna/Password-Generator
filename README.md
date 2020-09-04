@@ -14,18 +14,19 @@ The user is presented with the following options:
 * Numbers
 * Symbols
 
-![Image of Customisation Options](images\CustomisationOptions.JPG)  
+![Image of Customisation Options](/images/CustomisationOptions.JPG)  
 
 
-**The user can generate a password of 8 characters by default, however checking the *I want to choose the length of my password* checkbox will bring up the range slider as below:**
+The length of the password is set to 8 characters by default.  
+Checking the *I want to choose the length of my password* checkbox will bring up the range slider as below:
 
-![Image of Range Slider](\images\RangeSlider.JPG)
+![Image of Range Slider](/images/RangeSlider.JPG)
 
 ## Password Generation
 
 The generated password is displayed in the box and the user is then able to copy the password to clipboard using the *Copy* button.
 The *Copy* button is only displayed after the password has been generated.
 
-![Image of Password Copy](\images\PasswordCopy.JPG)
+![Image of Password Copy](/images/PasswordCopy.JPG)
 
 The password generater can be accessed [here.](https://himanshu-sxna.github.io/Password-Generator/)
